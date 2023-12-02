@@ -1,0 +1,18 @@
+<!--templates/base.html-->
+
+{% load static %}
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Hello and Welcome to my Portfolio.</h1>
+        </header>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
