@@ -1,9 +1,11 @@
+
 header h1{
-    color : red;
+    color :blue;
+    background-color: blueviolet;
 }
 
 p {
-    color:red;
+    color:rgb(7, 0, 0);
 }
 
   
