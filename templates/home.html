@@ -1,8 +1,134 @@
-<!-- templates/home.html -->
-{% extends 'base.html' %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --main-color: #333;
+            --secondary-color: #50b3a2;
+            --background-color: #f4f4f4;
+            --font-family: 'Arial', sans-serif;
+            --header-font: 'Georgia', serif;
+            --body-font: 'Verdana', sans-serif;
+        }
+        body {
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to right, #f4f4f4, #9ddcdc);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #header {
+            background: var(--main-color);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #header h1 {
+            margin: 0;
+            font-family: var(--header-font);
+            font-size: 2em;
+        }
+        #main {
+            float: left;
+            width: 70%;
+            padding: 0 30px;
+        }
+        #sidebar {
+            float: right;
+            width: 30%;
+            background: var(--main-color);
+            color: white;
+            padding: 10px;
+        }
+        #profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        h2 {
+            color: var(--main-color);
+            font-size: 1.5em;
+        }
+        a {
+            color: var(--secondary-color);
+        }
+        ul {
+            list-style-type: square;
+        }
+        @media screen and (max-width: 600px) {
+            #main {
+                width: 100%;
+            }
+            #sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
-    <p> My names are Victor Muthomi I am a django developer</p>
+    <header id="header">
+        <div class="container">
+            <h1 style="font-size: 40px; font-weight: bold; color: #f7f9f9; text-align: center;">
+                Victor Muthomi
+            </h1>
+            
+            <img id="profile-pic" src="photo/profile-picture.png" alt="Profile Picture of Victor Muthomi">
+            <p class="description" style="font-size: 1.2em; font-weight: bold; color: #ADD8E6;">
+                As a passionate self-taught developer, I specialize in Python and Django.
+                 I have a keen interest in creating efficient and scalable web applications 
+                 and am always ready to learn and adapt to new technologies.
+                 I believe in the power of code to transform and simplify our lives.
+            </p>
+            <p>Email: <a href="mailto:victormuthomi100@gmail.com">victormuthomi100@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/+254758407285">+254758407285</a></p>
+            <p><a href="https://github.com/Victormuthomi" target="_blank">GitHub Profile</a></p>
+            <p>Feel free to reach out to me for any opportunities, questions, or just for a chat!</p>
+        </div>
+    </header>
+    <main class="container">
+        <section id="main">
+            <h2>Objective</h2>
+            <p>Committed to excellence in web development, my aim is to utilize cutting-edge technologies to engineer solutions that address complex problems. 
+                Each project presents an opportunity to enhance my technical prowess and contribute meaningfully to the technological landscape.</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Python and Django: Proficient</li>
+                <li>Front-end technologies (HTML, CSS, JavaScript): Basic knowledge</li>
+                <li>Databases (SQL, PostgreSQL, MongoDB): Familiar</li>
+                <li>Version control systems (Git, GitHub): Knowledgeable</li>
+            </ul>
+            <h2>Projects</h2>
+            <ul>
+                <li>Online Book Summary: A web application that allows users to register an account and add topics along with their summaries. <a href="[GitHub Link]">GitHub Link</a></li>
+                <li>Airbnb Project: A web application that lists Airbnb properties and moving services. Users can view property details, 
+                    check availability, and book properties or services.
+                     <a href="https://github.com/Victormuthomi/airbnb_project">GitHub Link</a></li>
+                <li>Age Counter: A Python program that calculates the age of a user given their birth date. <a href="[GitHub Link]">GitHub Link</a></li>
+                <li>Team Scheduler: A Python program that allows users to input teams and automatically groups them into various groups. <a href="[GitHub Link]">GitHub Link</a></li>
+            </ul>
+        </section>
+        <aside id="sidebar">
+            <h2 style="font-size: 30px; color: #ADD8E6; text-align: center;">Education</h2>
+            <div style="background-color: #7e4747; padding: 20px; border-radius: 10px; font-family: Arial, sans-serif;">
+                <p style="color: #F5F5F5; font-size: 20px;"><strong>Committed to Excellence in Web Development</strong></p>
+                <p style="color: #F5F5F5;">As a dedicated self-taught developer, I have mastered Python and Django
+                     through rigorous study from industry-respected resources, including:</p>
+                <ul style="list-style-type: square; color: #F5F5F5;">
+                    <li><em>Python for Everyone</em></li>
+                    <li><em>Python Crash Course</em></li>
+                    <li><em>Django for Beginners</em></li>
+                </ul>
+                <p style="color: #F5F5F5;">This disciplined, self-directed approach has not only provided me with a profound
+                     understanding of Python and Django but also equipped me with a comprehensive knowledge of front-end technologies and databases.
+                      My unique educational journey, marked by unwavering commitment and initiative, sets me apart in the competitive field of web development.</p>
+            </div>
+            
+        </aside>
+    </main>
 </body>
-{% endblock content %}
+</html>
