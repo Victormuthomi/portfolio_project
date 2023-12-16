@@ -20,7 +20,7 @@ This is my personal portfolio project. It includes information about me, the ski
     ```
 
 ## Usage
-1. Open the `index.html` file in your web browser to view the portfolio.
+1. Open the `home.html` file in your web browser to view the portfolio.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
