@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = True
 #os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['victormuthomi-portfolio.onrender.com']
+
 
 
 # Application definition
