@@ -1,133 +1,115 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
-    <style>
-        :root {
-            --main-color: #2c3e50;
-            --secondary-color: #2980b9;
-            --background-color: #ecf0f1;
-            --font-family: 'Roboto', sans-serif;
-            --header-font: 'Lato', sans-serif;
-            --body-font: 'Roboto', sans-serif;
-        }
-        body {
-            font-family: var(--body-font);
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        #header {
-            background: var(--main-color);
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        #header h1 {
-            margin: 0;
-            font-family: var(--header-font);
-            font-size: 2em;
-        }
-        #main {
-            float: left;
-            width: 70%;
-            padding: 0 30px;
-        }
-        #sidebar {
-            float: right;
-            width: 30%;
-            background: var(--main-color);
-            color: white;
-            padding: 10px;
-        }
-        #profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-        h2 {
-            color: var(--main-color);
-            font-size: 1.5em;
-        }
-        a {
-            color: var(--secondary-color);
-        }
-        ul {
-            list-style-type: square;
-        }
-        @media screen and (max-width: 600px) {
-            #main {
-                width: 100%;
-            }
-            #sidebar {
-                width: 100%;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Victor Muthomi, a Python and Django Developer.">
+    <title>Victor Muthomi | Software Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% load static %}
 </head>
-<body>
-    <header id="header">
-        <div class="container">
-            <h1 style="font-size: 40px; font-weight: bold; color: #f7f9f9; text-align: center;">
-                Victor Muthomi
-            </h1>
-            
-            <img id="profile-pic" src="{% static 'images/profile-picture.png' %}" alt="Profile Picture of Victor Muthomi">
-            <p class="description" style="font-size: 1.2em; font-weight: bold; color: #ADD8E6;">
-                As a passionate self-taught developer, I specialize in Python and Django.
-                 I have a keen interest in creating efficient and scalable web applications 
-                 and am always ready to learn and adapt to new technologies.
-                 I believe in the power of code to transform and simplify our lives.
-            </p>
-            <p>Email: <a href="mailto:victormuthomi100@gmail.com">victormuthomi100@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/+254758407285">+254758407285</a></p>
-            <p><a href="https://github.com/Victormuthomi" target="_blank">GitHub Profile</a></p>
-            <p>Feel free to reach out to me for any opportunities, questions, or just for a chat!</p>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-gray-800 text-white p-6">
+        <div class="container mx-auto text-center">
+            <!-- Profile Picture -->
+            <img src="{% static 'images/victor.jpg' %}" alt="Victor Muthomi" class="w-32 h-32 rounded-full mx-auto mb-4">
+
+            <h1 class="text-3xl font-bold">Victor Muthomi</h1>
+            <p>Software Engineer | Python & Django Developer</p>
+            <nav class="mt-4">
+                <a href="#about" class="text-gray-300 hover:text-white mx-2">About Me</a>
+                <a href="#skills" class="text-gray-300 hover:text-white mx-2">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-white mx-2">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-white mx-2">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-white mx-2">Contact</a>
+                <a href="#photos" class="text-gray-300 hover:text-white mx-2">Photos</a>
+            </nav>
         </div>
     </header>
-    <main class="container">
-        <section id="main">
-            <h2>Objective</h2>
-            <p>Python Django Developer with 2 years of experience in building efficient and scalable web applications. Eager to leverage my technical skills in a dynamic software development team.</p>
-            <h2><b>Skills & Abilities</b></h2>
-            <ul>
-                <li><h3><b>Python and Django:</b></h3> Demonstrated proficiency in building robust, scalable, and user-friendly web applications using the Django framework.</li>
-                <li><h3><b>Front-end technologies (HTML, CSS, JavaScript):</b></h3> Basic knowledge in creating interactive, responsive, and visually appealing websites.</li>
-                <li><h3><b>Databases (SQL, PostgreSQL, MongoDB):</b></h3> Experience in managing databases and ensuring the smooth operation of web applications.</li>
-                <li><h3><b>Application Hosting (Render, Platform.sh):</b></h3> Experience in deploying and maintaining web applications on cloud platforms.</li>
-                <li><h3><b>Version control systems (Git, GitHub):</b></h3> Proficient in tracking changes, collaborating with other developers, and maintaining the integrity and continuity of the project.</li>
-            </ul>
-            <h2>Projects</h2>
-            <ul>
-                <li><h3><b>Online Book Summary:</b></h3> Developed a web application that enables users to register an account and add topics along with their summaries. <a href="https://github.com/Victormuthomi/online_book_summary_project">GitHub Link</a></li>
-                <li><h3><b>Airbnb Project:</b></h3> Created a web application that lists Airbnb properties and moving services. Users can view property details, check availability, and book properties or services. <a href="https://github.com/Victormuthomi/airbnb_project">GitHub Link</a></li>
-                <li><h3><b>Age Counter:</b></h3> Designed a Python program that calculates the age of a user given their birth date. <a href="https://github.com/Victormuthomi/age_counter">GitHub Link</a></li>
-                <li><h3><b>Team Scheduler:</b></h3> Developed a Python program that allows users to input teams and automatically groups them into various groups. <a href="https://github.com/Victormuthomi/team_scheduler">GitHub Link</a></li>
-            </ul>
-        </section>
-        <aside id="sidebar">
-            <h2 style="font-size: 30px; color: #ADD8E6; text-align: center;">Education</h2>
-            <div style="background-color: #7e4747; padding: 20px; border-radius: 10px; font-family: Arial, sans-serif;">
-                <p style="color: #F5F5F5; font-size: 20px;"><strong>Committed to Excellence in Web Development</strong></p>
-                <p style="color: #F5F5F5;">As a dedicated self-taught developer, I have mastered Python and Django
-                     through rigorous study from industry-respected resources, including:</p>
-                <ul style="list-style-type: square; color: #F5F5F5;">
-                    <li><em>Python for Everyone</em></li>
-                    <li><em>Python Crash Course</em></li>
-                    <li><em>Django for Beginners</em></li>
-                </ul>
-                <p style="color: #F5F5F5;">This disciplined, self-directed approach has not only provided me with a profound
-                     understanding of Python and Django but also equipped me with a comprehensive knowledge of front-end technologies and databases.
-                      My unique educational journey, marked by unwavering commitment and initiative, sets me apart in the competitive field of web development.</p>
+
+    <section id="about" class="bg-white py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p>With 2 years of experience as a Python Developer, I have developed a passion for building efficient, scalable, and user-friendly web applications using Django. I am currently seeking opportunities to enhance my skills in advanced Python programming.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-gray-100 py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-bold">Technical Skills:</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Python, Django, Flask</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>SQL, PostgreSQL, MongoDB</li>
+                        <li>Cloud Deployment</li>
+                        <li>Git, GitHub</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold">Soft Skills:</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Problem-solving</li>
+                        <li>Communication</li>
+                        <li>Time management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
             </div>
-            
-        </aside>
-    </main>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-white py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Experience</h2>
+            <ul>
+                <li><strong>Software Developer (Python), Kisumu Lakeside Homes</strong> (2022–2024): Developed web applications, API integration, and back-end architecture using Django.</li>
+                <li><strong>Back-End Developer, Kisumu Lakeside Homes</strong> (2023–2024): Worked on database management and back-end optimization for dynamic websites.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-gray-100 py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Projects</h2>
+            <ul>
+                <li><a href="https://github.com/Victormuthomi/private_airbnb" class="text-blue-500 hover:underline">Kisumu Lakeside Homes Website</a>: Property listing and moving services.</li>
+                <li><a href="https://github.com/Victormuthomi/online_book_summary_project" class="text-blue-500 hover:underline">Online Book Summary</a>: User authentication, topic management.</li>
+                <li><a href="https://github.com/Victormuthomi/cab_booking" class="text-blue-500 hover:underline">Cab Booking System</a>: Real-time data processing and geolocation.</li>
+                <li><a href="https://github.com/Victormuthomi/bank_management_system" class="text-blue-500 hover:underline">Bank Management System</a>: Secure financial transactions.</li>
+                <li><a href="https://github.com/Victormuthomi/school-management-system" class="text-blue-500 hover:underline">School Management System</a>: Large dataset handling and complex business logic.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="photos" class="bg-white py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Photos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Example Images -->
+                <img src="{% static 'images/computer.jpg' %}" alt="Example Photo 1" class="w-full h-64 object-cover rounded-lg">
+                <img src="{% static 'images/code.png' %}" alt="Example Photo 2" class="w-full h-64 object-cover rounded-lg">
+                <img src="{% static 'images/voting.png' %}" alt="Example Photo 3" class="w-full h-64 object-cover rounded-lg">
+                <img src="{% static 'images/kisumu.png' %}" alt="Example Photo 4" class="w-full h-64 object-cover rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white py-12">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4">Contact</h2>
+            <p>Email: <a href="mailto:victormuthomi100@gmail.com" class="text-blue-500 hover:underline">victormuthomi100@gmail.com</a></p>
+            <p>Phone: +254 758 40 72 85</p>
+            <p>GitHub: <a href="https://github.com/Victormuthomi" class="text-blue-500 hover:underline">Victor Muthomi</a></p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Victor Muthomi. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

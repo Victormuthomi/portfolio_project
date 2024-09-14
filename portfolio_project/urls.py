@@ -15,9 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include #new
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')), #new
-]
+    path('', include('portfolio.urls')),  # Make sure 'portfolio' is your app name
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

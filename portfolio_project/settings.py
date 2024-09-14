@@ -29,9 +29,7 @@ SECRET_KEY = 'django-insecure-_o*lrkrhr3uea_w-rf806se==@+^stxus($%yw$(r0udg1vz^f
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = [
-    'victormuthomi-portfolio.onrender.com',
-    '127.0.0.1',
-    '127.0.0.1:8000'
+        '*'
 ]
 
 
@@ -57,7 +55,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Other middlewares...
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'portfolio_project.urls'
 
@@ -122,16 +124,23 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Static files (CSS, JavaScript, images)
+# settings.py
+
+# Static files (CSS, JavaScript, images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Directory where collectstatic will collect static files for deployment
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Additional directories for static files
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Storage backend for static files (for production)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#static files
 
